@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIS Records</title>
+</head>
+<body>
+
+<h1>Students</h1>
+<ul>
+    {% for student in students %}
+        <li>{{ student.name }} ({{ student.email }})</li>
+    {% endfor %}
+</ul>
+
+<h1>Courses</h1>
+<ul>
+    {% for course in courses %}
+        <li>{{ course.name }} ({{ course.credits }} credits)</li>
+    {% endfor %}
+</ul>
+
+<h1>Programs</h1>
+<ul>
+    {% for program in programs %}
+        <li>{{ program.name }} - {{ program.department.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Student Courses</h1>
+<ul>
+    {% for student_course in student_courses %}
+        <li>{{ student_course.student.name }} - {{ student_course.course.name }} ({{ student_course.status }})</li>
+    {% endfor %}
+</ul>
+
+<h1>Colleges</h1>
+<ul>
+    {% for college in colleges %}
+        <li>{{ college.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Departments</h1>
+<ul>
+    {% for department in departments %}
+        <li>{{ department.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Semesters</h1>
+<ul>
+    {% for semester in semesters %}
+        <li>{{ semester.name }} ({{ semester.year }})</li>
+    {% endfor %}
+</ul>
+
+<h1>Prerequisites</h1>
+<ul>
+    {% for prerequisite in prerequisites %}
+        <li>{{ prerequisite.course.name }} requires {{ prerequisite.prerequisite_course.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Section Groups</h1>
+<ul>
+    {% for section_group in section_groups %}
+        <li>{{ section_group.name }} ({{ section_group.required_credits }} required credits)</li>
+    {% endfor %}
+</ul>
+
+<h1>Sections</h1>
+<ul>
+    {% for section in sections %}
+        <li>{{ section.name }} ({{ section.code }}) - {{ section.required_credits }} required credits</li>
+    {% endfor %}
+</ul>
+
+<h1>Course Option Groups</h1>
+<ul>
+    {% for course_option_group in course_option_groups %}
+        <li>{{ course_option_group.name }} ({{ course_option_group.required_credits }} required credits)</li>
+    {% endfor %}
+</ul>
+
+<h1>Student Roles</h1>
+<ul>
+    {% for student_role in student_roles %}
+        <li>{{ student_role.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>External Colleges</h1>
+<ul>
+    {% for external_college in external_colleges %}
+        <li>{{ external_college.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Transfer Equivalencies</h1>
+<ul>
+    {% for transfer_equivalency in transfer_equivalencies %}
+        <li>{{ transfer_equivalency.external_course_name }} at {{ transfer_equivalency.external_college.name }} transfers as {{ transfer_equivalency.equivalent_course.name }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Student Degree Plans</h1>
+<ul>
+    {% for student_degree_plan in student_degree_plans %}
+        <li>{{ student_degree_plan.student.name }} - {{ student_degree_plan.program.name }} ({{ student_degree_plan.type }})</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
