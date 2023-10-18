@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Semester</title>
+</head>
+<body>
+
+    <h1>Add Semester</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+
+    <a href="{% url 'cis_records' %}">Back to Records</a>
+
+</body>
+</html>

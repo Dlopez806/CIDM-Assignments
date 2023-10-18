@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import College, Department, Course, SectionGroup, Section, CourseOptionGroup, Program, Student, StudentRole, Semester, ExternalCollege, TransferEquivalency, StudentCourse, Prerequisite, StudentDegreePlan
 
-# Register your models here.
+# Register models here.
 
 admin.site.register(College)
 admin.site.register(Department)
