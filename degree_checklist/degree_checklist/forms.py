@@ -17,6 +17,10 @@ from .models import (
     StudentDegreePlan
 )
 
+class CsvImportForm(forms.Form):
+    csv_file = forms.FileField()
+
+
 class CollegeForm(forms.ModelForm):
     class Meta:
         model = College
