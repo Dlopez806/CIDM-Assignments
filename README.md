@@ -44,3 +44,9 @@ All though I could have reached out for help on this, over the past few weeks, u
 Once Again, thank you for being apart of my MBA journey at WTAMU and I will be thinking about you and all the professors that have helped me along the way as I walk that stage next week... Go Buffs!
 
 **PS Screenshots will be located in the "screenshots" folder.
+
+## Django Admin Login Information 
+
+###
+Username: admin
+Password: cidm6325
