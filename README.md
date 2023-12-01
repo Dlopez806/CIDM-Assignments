@@ -1,32 +1,46 @@
-# CIDM-Assignments 
-Assignment 4 - Developing Design Specifications
+# CIDM-Final Project
+Unable to Deploy... Sad Day.
 
 ## Reflections
 
-### Learning through Iteration
-The journey through developing the CIS Degree Program Management System has been a blend of challenges, learning, and iterative improvements. Initially, translating the real-world processes of a degree program into an ERD proved to be a challenge. My first attempts were not in natural language and were over-complicated, reflecting a lack of understanding of the underlying relationships between entities.
+### 
+The journey through developing the CIS Degree Program Management System has been a blend of challenges, learning, and iterative improvements but unfortunatley I came up short with the final project as I was unable to deploy it.
 
-However, revisiting the requirements, consulting additional resources on degree program structures, and reviewing the feedback from my professor, I was able to simplify the design, making it more intuitive and closer to natural language. This iterative process, though time-consuming, was incredibly educational and helped in better understanding both the domain and the technical implementation.
+All in all this project was a great experiance, but I must say in my humbling opinion I had a hard time following the book and I took matters into my own hands and did my own research and implented some of the things required for the project that were expressed different in the book, I hope my effort is acknowledged in the final grade. 
 
-### User Story Examples
-- **Viewing Degree Requirements**: As a Student, I want to view the degree requirements for the program, so that I can understand the courses required to complete the program.
+Thank you Dr. Babb for an incredible course in which I will take these new skills that I have learned into the real word. Web/Application Developement is something that I am passionate about and this class has proved to me that there so much more to learn in this revolutionary field.
 
-- **Checking Course Equivalency**: As a Transfer Student, I want to check the equivalency of external courses, so that I can understand how my previous coursework aligns with the program requirements.
+Below will be a brief outline of the steps I took in exact order to deploy and where I found myself in a hole that I could not dig myself out of.
 
-- **Updating Course Information**: As an Administrator, I want to update course information, so that students have the most current information available.
 
-- **Viewing Semester Course Offerings**: As a Student, I want to view courses offered in a particular semester, so that I can plan my schedule for the semester.
+### STEPS 
+- **Created an account on Digital Ocean and created a 'Droplet'
 
-- **Viewing Course Prerequisites**: As a Student, I want to view the prerequisites for a course, so that I can ensure I am eligible to enroll in the course.
+- **Generated an SSH Key via Command Prompt Terminal and connected via SSH using command 'ssh root@146.190.124.97' - My IP that Digital Ocean gave me
 
-- **Submitting Transfer Course Evaluations**: As a Transfer Student, I want to submit external course information for evaluation, so that I can receive credit towards the desired degree.
+- **Continued through prompt which inlcuded incorperating my private SSH key and completed the set up.
 
-- **Checking Degree Progress**: As a Student, I want to check my progress towards degree completion, so that I can stay on track to graduate.
+- **Updated and Upgraded the need packages using command lines 'sudo apt update' & 'sudo apt upgrade'. I also Installed Python and the necessary tools needed to deploy the virtual enviroment.
 
-- **Viewing Historical Grade Information**: As a Student, I want to view grades from previous semesters, so that I can understand my academic performance over time.
+- **Created a new user account for you using the commands 'sudo adduser babb' for the username and 'cidm6325' for the password. I also assigned you to Room Number 70 to add some information to your profile.
 
-- **Updating Elective Course Groups**: As an Administrator, I want to update groups of elective courses, so that I can reflect the most current program requirements.
+- **Cloned my git repository into the terminal 
 
-## Future Improvements
-Going forward, I plan on refining the ERD, improving the user interface, and incorporating more complex functionalities like tracking student progress through their degree program, and implementing a feature for administrators to update course details and student profiles.
+- **Installed the virtual enviroment using commands 'apt install python3-virtualenv' 
 
+- **After this I was able to connect to my virtual enviroment as if I was connected in it through VS Code by changing directories and running the command 'source venv/Scripts/activate'
+
+- **I ran the command "ls" to make sure I was seeing all my files associated with the project and I was able to.
+
+- **The next step I did was try to install the requirements.txt to move fowrad but I noticed that this file was missing, so i generated it and restarted my virtual enviroment.
+
+- **Unfortunatley I was unable to install it even after making the changes. I tried to skip this step and run other commands like 'makemigrations' but It was unsucessfull. After watching numerous Youtube Videos I was unable to figure out why this was happening and this is where I stopped.
+
+## Conclusion
+I will provide images of outputs of my project to show what was implemented as I was unable to deploy. With the information stated in the steps maybe you are able to deploy this and if you do please let me know. I would like to know where i went wrong.
+
+All though I could have reached out for help on this, over the past few weeks, unexpected and challenging circumstances have arisen in my personal life that required my immediate attention and care. These circumstances required a significant amount of my time, making it difficult for me to allocate the necessary focus and effort to the project... I hope you understand.
+
+Once Again, thank you for being apart of my MBA journey at WTAMU and I will be thinking about you and all the professors that have helped me along the way as I walk that stage next week... Go Buffs!
+
+**PS Screenshots will be located in the "screenshots" folder.
