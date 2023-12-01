@@ -14,27 +14,27 @@ Below will be a brief outline of the steps I took in exact order to deploy and w
 
 
 ### STEPS 
-- **Created an account on Digital Ocean and created a 'Droplet'
+- Created an account on Digital Ocean and created a 'Droplet'
 
-- **Generated an SSH Key via Command Prompt Terminal and connected via SSH using command 'ssh root@146.190.124.97' - My IP that Digital Ocean gave me
+- Generated an SSH Key via Command Prompt Terminal and connected via SSH using command 'ssh root@146.190.124.97' - My IP that Digital Ocean gave me
 
-- **Continued through prompt which inlcuded incorperating my private SSH key and completed the set up.
+- Continued through prompt which inlcuded incorperating my private SSH key and completed the set up.
 
-- **Updated and Upgraded the need packages using command lines 'sudo apt update' & 'sudo apt upgrade'. I also Installed Python and the necessary tools needed to deploy the virtual enviroment.
+- Updated and Upgraded the need packages using command lines 'sudo apt update' & 'sudo apt upgrade'. I also Installed Python and the necessary tools needed to deploy the virtual enviroment.
 
-- **Created a new user account for you using the commands 'sudo adduser babb' for the username and 'cidm6325' for the password. I also assigned you to Room Number 70 to add some information to your profile.
+- Created a new user account for you using the commands 'sudo adduser babb' for the username and 'cidm6325' for the password. I also assigned you to Room Number 70 to add some information to your profile.
 
-- **Cloned my git repository into the terminal 
+- Cloned my git repository into the terminal 
 
-- **Installed the virtual enviroment using commands 'apt install python3-virtualenv' 
+- Installed the virtual enviroment using commands 'apt install python3-virtualenv'
+  
+- After this I was able to connect to my virtual enviroment as if I was connected in it through VS Code by changing directories and running the command 'source venv/Scripts/activate'
 
-- **After this I was able to connect to my virtual enviroment as if I was connected in it through VS Code by changing directories and running the command 'source venv/Scripts/activate'
+- I ran the command "ls" to make sure I was seeing all my files associated with the project and I was able to.
 
-- **I ran the command "ls" to make sure I was seeing all my files associated with the project and I was able to.
+- The next step I did was try to install the requirements.txt to move fowrad but I noticed that this file was missing, so i generated it and restarted my virtual enviroment.
 
-- **The next step I did was try to install the requirements.txt to move fowrad but I noticed that this file was missing, so i generated it and restarted my virtual enviroment.
-
-- **Unfortunatley I was unable to install it even after making the changes. I tried to skip this step and run other commands like 'makemigrations' but It was unsucessfull. After watching numerous Youtube Videos I was unable to figure out why this was happening and this is where I stopped.
+- Unfortunatley I was unable to install it even after making the changes. I tried to skip this step and run other commands like 'makemigrations' but It was unsucessfull. After watching numerous Youtube Videos I was unable to figure out why this was happening and this is where I stopped.
 
 ## Conclusion
 I will provide images of outputs of my project to show what was implemented as I was unable to deploy. With the information stated in the steps maybe you are able to deploy this and if you do please let me know. I would like to know where i went wrong.
