@@ -45,6 +45,7 @@ urlpatterns = [
     path('add_student_degree_plan/', views.add_student_degree_plan,
          name='add_student_degree_plan'),
 
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
