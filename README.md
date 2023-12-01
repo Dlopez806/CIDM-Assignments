@@ -30,9 +30,9 @@ Below will be a brief outline of the steps I took in exact order to deploy and w
   
 - After this I was able to connect to my virtual enviroment as if I was connected in it through VS Code by changing directories and running the command 'source venv/Scripts/activate'
 
-- I ran the command "ls" to make sure I was seeing all my files associated with the project and I was able to.
+- I ran the command "ls" to make sure I was seeing all my files associated with the project, in which I was able to.
 
-- The next step I did was try to install the requirements.txt to move fowrad but I noticed that this file was missing, so i generated it and restarted my virtual enviroment.
+- The next step I did was try to install the requirements.txt to move forward but I noticed that this file was missing, so I generated it and restarted my virtual enviroment.
 
 - Unfortunatley I was unable to install it even after making the changes. I tried to skip this step and run other commands like 'makemigrations' but It was unsucessfull. After watching numerous Youtube Videos I was unable to figure out why this was happening and this is where I stopped.
 
