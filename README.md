@@ -37,11 +37,11 @@ Below will be a brief outline of the steps I took in exact order to deploy and w
 - Unfortunatley I was unable to install it even after making the changes. I tried to skip this step and run other commands like 'makemigrations' but It was unsucessfull. After watching numerous Youtube Videos I was unable to figure out why this was happening and this is where I stopped.
 
 ## Conclusion
-I will provide images of outputs of my project to show what was implemented as I was unable to deploy. With the information stated in the steps maybe you are able to deploy this and if you do please let me know. I would like to know where I went wrong.
-
 All though I could have reached out for help on this, over the past few weeks, unexpected and challenging circumstances have arisen in my personal life that required my immediate attention and care. These circumstances required a significant amount of my time, making it difficult for me to allocate the necessary focus and effort to the project... I hope you understand.
 
 Once Again, thank you for being apart of my MBA journey at WTAMU and I will be thinking about you and all the professors that have helped me along the way as I walk that stage next week... Go Buffs!
+
+I will provide images of outputs of my project to show what was implemented as I was unable to deploy. With the information stated in the steps maybe you are able to deploy this and if you do please let me know. I would like to know where I went wrong.
 
 **PS Screenshots will be located in the "screenshots" folder.
 
