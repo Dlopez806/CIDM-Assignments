@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from degree_checklist import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,16 +29,23 @@ urlpatterns = [
     path('add_course/', views.add_course, name='add_course'),
     path('add_section_group/', views.add_section_group, name='add_section_group'),
     path('add_section/', views.add_section, name='add_section'),
-    path('add_course_option_group/', views.add_course_option_group, name='add_course_option_group'),
+    path('add_course_option_group/', views.add_course_option_group,
+         name='add_course_option_group'),
     path('add_program/', views.add_program, name='add_program'),
     path('add_student/', views.add_student, name='add_student'),
     path('add_student_role/', views.add_student_role, name='add_student_role'),
     path('add_semester/', views.add_semester, name='add_semester'),
-    path('add_external_college/', views.add_external_college, name='add_external_college'),
-    path('add_transfer_equivalency/', views.add_transfer_equivalency, name='add_transfer_equivalency'),
-    path('add_student_course/', views.add_student_course, name='add_student_course'),
+    path('add_external_college/', views.add_external_college,
+         name='add_external_college'),
+    path('add_transfer_equivalency/', views.add_transfer_equivalency,
+         name='add_transfer_equivalency'),
+    path('add_student_course/', views.add_student_course,
+         name='add_student_course'),
     path('add_prerequisite/', views.add_prerequisite, name='add_prerequisite'),
-    path('add_student_degree_plan/', views.add_student_degree_plan, name='add_student_degree_plan'),
-
+    path('add_student_degree_plan/', views.add_student_degree_plan,
+         name='add_student_degree_plan'),
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

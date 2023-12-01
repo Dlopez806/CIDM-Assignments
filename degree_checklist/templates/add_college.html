@@ -9,6 +9,8 @@
 
     <h1>Add College</h1>
 
+    {% load crispy_forms_tags %}
+
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

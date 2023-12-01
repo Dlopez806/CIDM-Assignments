@@ -3,117 +3,235 @@
 
 <head>
     <title>CIS Records</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JavaScript (jQuery and Popper.js are required dependencies) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
+<style>
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    body {
+        background-color: maroon;
+    }
+
+    hr {
+        background-color: white;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    .btn-primary {
+        background-color: black;
+        border-color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: black;
+        border-color: white;
+    }
+
+</style>
+
 <body>
+    <div class="container mt-5">
+        <h1>CIDM-6325-70 <img src="{{ MEDIA_URL }}wtamu.png" alt="WTAMU"></h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Students <a href="{% url 'add_student' %}" class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for student in students %}
+                    <li class="list-group-item">{{ student.name }} ({{ student.email }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-    <h1>Students <a href="{% url 'add_student' %}">Add New</a></h1>
-    <ul>
-        {% for student in students %}
-        <li>{{ student.name }} ({{ student.email }})</li>
-        {% endfor %}
-    </ul>
+            <div class="col-md-6">
+                <h2>Courses <a href="{% url 'add_course' %}" class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for course in courses %}
+                    <li class="list-group-item">{{ course.name }} ({{ course.credits }} credits)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
-    <h1>Courses <a href="{% url 'add_course' %}">Add New</a></h1>
-    <ul>
-        {% for course in courses %}
-        <li>{{ course.name }} ({{ course.credits }} credits)</li>
-        {% endfor %}
-    </ul>
+        <hr>
 
-    <h1>Programs <a href="{% url 'add_program' %}">Add New</a></h1>
-    <ul>
-        {% for program in programs %}
-        <li>{{ program.name }} - {{ program.department.name }}</li>
-        {% endfor %}
-    </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Programs <a href="{% url 'add_program' %}" class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for program in programs %}
+                    <li class="list-group-item">{{ program.name }} - {{ program.department.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-    <h1>Student Courses <a href="{% url 'add_student_course' %}">Add New</a></h1>
-    <ul>
-        {% for student_course in student_courses %}
-        <li>{{ student_course.student.name }} - {{ student_course.course.name }} ({{ student_course.status }})</li>
-        {% endfor %}
-    </ul>
+            <div class="col-md-6">
+                <h2>Student Courses <a href="{% url 'add_student_course' %}" class="btn btn-primary btn-sm ml-2">Add
+                        New</a>
+                </h2>
+                <ul class="list-group">
+                    {% for student_course in student_courses %}
+                    <li class="list-group-item">{{ student_course.student.name }} - {{ student_course.course.name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Student Degree Plans <a href="{% url 'add_student_degree_plan' %}"
+                        class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for student_degree_plan in student_degree_plans %}
+                    <li class="list-group-item">{{ student_degree_plan.student.name }} - {{
+                        student_degree_plan.program.name
+                        }} ({{ student_degree_plan.type }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Colleges <a href="{% url 'add_college' %}" class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for college in colleges %}
+                    <li class="list-group-item">{{ college.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <hr>
 
 
-    <h1>Student Degree Plans <a href="{% url 'add_student_degree_plan' %}">Add New</a></h1>
-    <ul>
-        {% for student_degree_plan in student_degree_plans %}
-        <li>{{ student_degree_plan.student.name }} - {{ student_degree_plan.program.name }} ({{ student_degree_plan.type
-            }})</li>
-        {% endfor %}
-    </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Departments <a href="{% url 'add_department' %}" class="btn btn-primary btn-sm ml-2">Add New</a>
+                </h2>
+                <ul class="list-group">
+                    {% for department in departments %}
+                    <li class="list-group-item">{{ department.name }} - {{ department.college.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-    <h1>Colleges <a href="{% url 'add_college' %}">Add New</a></h1>
-    <ul>
-        {% for college in colleges %}
-        <li>{{ college.name }}</li>
-        {% endfor %}
-    </ul>
+            <div class="col-md-6">
+                <h2>Section Groups <a href="{% url 'add_section_group' %}" class="btn btn-primary btn-sm ml-2">Add
+                        New</a>
+                </h2>
+                <ul class="list-group">
+                    {% for section_group in section_groups %}
+                    <li class="list-group-item">{{ section_group.name }} ({{ section_group.required_credits }} required
+                        credits)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
-    <h1>Departments <a href="{% url 'add_department' %}">Add New</a></h1>
-    <ul>
-        {% for department in departments %}
-        <li>{{ department.name }} - {{ department.college.name }}</li>
-        {% endfor %}
-    </ul>
+        <hr>
 
-    <h1>Section Groups <a href="{% url 'add_section_group' %}">Add New</a></h1>
-    <ul>
-        {% for section_group in section_groups %}
-        <li>{{ section_group.name }} ({{ section_group.required_credits }} required credits)</li>
-        {% endfor %}
-    </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Sections <a href="{% url 'add_section' %}" class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for section in sections %}
+                    <li class="list-group-item">{{ section.name }} ({{ section.code }}) - {{section.section_group.name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-    <h1>Sections <a href="{% url 'add_section' %}">Add New</a></h1>
-    <ul>
-        {% for section in sections %}
-        <li>{{ section.name }} ({{ section.code }}) - {{ section.section_group.name }}</li>
-        {% endfor %}
-    </ul>
+            <div class="col-md-6">
+                <h2>Course Option Groups <a href="{% url 'add_course_option_group' %}"
+                        class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for course_option_group in course_option_groups %}
+                    <li class="list-group-item">{{ course_option_group.name }} ({{course_option_group.required_credits}}required credits)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
-    <h1>Course Option Groups <a href="{% url 'add_course_option_group' %}">Add New</a></h1>
-    <ul>
-        {% for course_option_group in course_option_groups %}
-        <li>{{ course_option_group.name }} ({{ course_option_group.required_credits }} required credits)</li>
-        {% endfor %}
-    </ul>
+        <hr>
 
-    <h1>Student Roles <a href="{% url 'add_student_role' %}">Add New</a></h1>
-    <ul>
-        {% for student_role in student_roles %}
-        <li>{{ student_role.name }}</li>
-        {% endfor %}
-    </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Student Roles <a href="{% url 'add_student_role' %}" class="btn btn-primary btn-sm ml-2">Add New</a>
+                </h2>
+                <ul class="list-group">
+                    {% for student_role in student_roles %}
+                    <li class="list-group-item">{{ student_role.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Semesters <a href="{% url 'add_semester' %}" class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for semester in semesters %}
+                    <li class="list-group-item">{{ semester.name }} ({{ semester.year }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
-    <h1>Semesters <a href="{% url 'add_semester' %}">Add New</a></h1>
-    <ul>
-        {% for semester in semesters %}
-        <li>{{ semester.name }} ({{ semester.year }})</li>
-        {% endfor %}
-    </ul>
+        <hr>
 
-    <h1>External Colleges <a href="{% url 'add_external_college' %}">Add New</a></h1>
-    <ul>
-        {% for external_college in external_colleges %}
-        <li>{{ external_college.name }}</li>
-        {% endfor %}
-    </ul>
 
-    <h1>Transfer Equivalencies <a href="{% url 'add_transfer_equivalency' %}">Add New</a></h1>
-    <ul>
-        {% for transfer_equivalency in transfer_equivalencies %}
-        <li>{{ transfer_equivalency.external_course_name }} at {{ transfer_equivalency.external_college.name }}
-            transfers as {{ transfer_equivalency.equivalent_course.name }}</li>
-        {% endfor %}
-    </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>External Colleges <a href="{% url 'add_external_college' %}" class="btn btn-primary btn-sm ml-2">Add
+                        New</a></h2>
+                <ul class="list-group">
+                    {% for external_college in external_colleges %}
+                    <li class="list-group-item">{{ external_college.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-    <h1>Prerequisites <a href="{% url 'add_prerequisite' %}">Add New</a></h1>
-    <ul>
-        {% for prerequisite in prerequisites %}
-        <li>{{ prerequisite.course.name }} - Prerequisite {{ prerequisite.prerequisite_course.name }}</li>
-        {% endfor %}
-    </ul>
+            <div class="col-md-6">
+                <h2>Transfer Equivalencies <a href="{% url 'add_transfer_equivalency' %}"
+                        class="btn btn-primary btn-sm ml-2">Add New</a></h2>
+                <ul class="list-group">
+                    {% for transfer_equivalency in transfer_equivalencies %}
+                    <li class="list-group-item">{{ transfer_equivalency.external_course_name }} at {{
+                        transfer_equivalency.external_college.name }} transfers as {{
+                        transfer_equivalency.equivalent_course.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Prerequisites <a href="{% url 'add_prerequisite' %}" class="btn btn-primary btn-sm ml-2">Add New</a>
+                </h2>
+                <ul class="list-group">
+                    {% for prerequisite in prerequisites %}
+                    <li class="list-group-item">{{ prerequisite.course.name }} - Prerequisite {{
+                        prerequisite.prerequisite_course.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
 </body>
